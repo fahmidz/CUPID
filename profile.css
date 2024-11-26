@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1); /* Light pink gradient */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5em;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label Styles */
+label {
+    font-size: 1.1em;
+    color: #ff6f61; /* Pink color */
+    margin-bottom: 5px;
+}
+
+/* Input, Select, and Textarea styling */
+input[type="number"], input[type="file"], select, textarea {
+    padding: 12px 15px;  /* Same padding for all input types */
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Make them full width */
+    margin-bottom: 15px; /* Space below each input */
+    box-sizing: border-box; /* Include padding in the element's width/height */
+}
+
+/* Additional styling for textarea (optional) */
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+
+input[type="file"] {
+    background-color: #f9f9f9;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff4081; /* Pink button background */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #ff6a6a; /* Hover color */
+}
+
+/* Current Picture Styles */
+img {
+    max-width: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Back to Home Link */
+p a {
+    text-decoration: none;
+    color: #ff4081; /* Pink color */
+    font-size: 1.2em;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p a:hover {
+    color: #ff6a6a; /* Hover color */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+   
+    button {
+        font-size: 1em;
+    }
+}
