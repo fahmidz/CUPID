@@ -1,0 +1,131 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    color: #333;
+}
+
+/* Basic styling for sparkle container */
+.sparkle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;  /* Ensures sparkles don't interfere with clicking on the page */
+  z-index: 9999;  /* Makes sure the sparkles are on top */
+  background: rgba(0, 0, 0, 0); /* Transparent background */
+}
+
+/* Styling for individual sparkles */
+.sparkle {
+  position: absolute;
+  background-color: #fff;  /* White color for sparkles */
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle-animation linear infinite;
+}
+
+/* Animation for sparkle movement */
+@keyframes sparkle-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.sparkle {
+  width: 10px;  /* Increased for better visibility */
+  height: 10px; /* Increased for better visibility */
+}
+
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Error Message */
+em {
+    display: block;
+    margin-bottom: 1rem;
+    color: #8f435c;
+    font-style: italic;
+}
+
+/* Form Style */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Form Fields */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #ffb6c1;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ff6a6a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
