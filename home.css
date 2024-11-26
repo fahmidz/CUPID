@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+    color: #4a4a4a;
+    line-height: 1.8;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Background Animation */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styles */
+header {
+    background: transparent;
+    color: #fff;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    background: #ff4081;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+header nav ul li a:hover {
+    background-color: #ff6a6a;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Glass effect */
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 1s ease-in-out;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Profile Section */
+main h2, main h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ff6f61;
+    margin-bottom: 15px;
+}
+
+/* Profile Picture */
+img {
+    display: block;
+    margin: 20px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 105, 135, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%; /* Ensure it doesn't overflow */
+    max-height: 100%; /* Ensure it doesn't overflow */
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.5);
+}
+
+/* Profile Info: Name, Age, Likes, and Dislikes */
+.profile-info p {
+    color: #ffb6c1; /* Light pink color */
+    text-align: center;
+    font-weight: normal; /* Remove bold */
+    margin: 10px 0;
+    word-wrap: break-word; /* Prevent overflow in case of long text */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Buttons Styled as List Items */
+ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Allow the buttons to wrap on smaller screens */
+}
+
+/* Style for buttons */
+ul li a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff6a6a, #ffa07a);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 105, 135, 0.3);
+    transition: all 0.4s ease;
+    white-space: nowrap; /* Prevent text wrapping inside the button */
+    max-width: 100%; /* Prevent overflowing button text */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if the button text overflows */
+}
+
+ul li a:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ffa07a, #ff6a6a);
+    box-shadow: 0 6px 15px rgba(255, 105, 135, 0.5);
+}
+
+/* List of Users */
+ul.users-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center the list */
+    gap: 20px; /* Add space between user items */
+}
+
+/* User Profile Cards */
+ul.users-list li {
+    margin: 20px;
+    padding: 20px;
+    background: transparent; /* Keep background transparent */
+    border-radius: 15px;
+    box-shadow: none; /* Remove the shadow */
+    width: 250px; /* Set a fixed width */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Hover effect for users' profile cards */
+ul.users-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Apply light pink color to the name, age, likes, dislikes for other users */
+ul.users-list li .user-info p {
+    color: #ffb6c1; /* Light pink color */
+    font-weight: normal; /* Remove bold */
+    text-align: center;
+    word-wrap: break-word; /* Prevent overflow */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Subtle Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    /* Adjust profile list layout on small screens */
+    ul.users-list li {
+        width: 100%; /* Full width on smaller screens */
+        padding: 10px;
+    }
+
+    /* Adjust the buttons to take full width */
+    ul li a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    header h1 {
+        font-size: 3rem; /* Smaller header for smaller screens */
+    }
+}
