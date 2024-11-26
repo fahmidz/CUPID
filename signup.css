@@ -1,0 +1,95 @@
+body, h1, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center everything */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+/* Basic styling for sparkle container */
+.sparkle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;  /* Ensures sparkles don't interfere with clicking on the page */
+  z-index: 9999;  /* Makes sure the sparkles are on top */
+  background: rgba(0, 0, 0, 0); /* Transparent background */
+}
+
+/* Styling for individual sparkles */
+.sparkle {
+  position: absolute;
+  background-color: #fff;  /* White color for sparkles */
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle-animation linear infinite;
+}
+
+/* Animation for sparkle movement */
+@keyframes sparkle-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Try increasing the sparkle size for visibility */
+.sparkle {
+  width: 10px;  /* Increased for better visibility */
+  height: 10px; /* Increased for better visibility */
+}
+
+
+/* Header styling */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Welcome message styling */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ffe8ec;
+    line-height: 1.6;
+}
+
+/* Link button styling */
+a {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: #ff4081;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+a:hover {
+    background: #ff6a6a;
+    transform: scale(1.05);
+}
