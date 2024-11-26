@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+        <h1>Signup</h1>
+        <p class="welcome-message">Welcome! We Are Glad To Have You Here!</p>
+        <a href="project.html" class="back-home">Back To Home</a>
+    </div>
+
+    <!-- Sparkle Container -->
+    <div class="sparkle-container" id="sparkle-container"></div>
+
+    <script>
+  // Create sparkles at random positions
+  const sparkleContainer = document.getElementById("sparkle-container");
+  const numberOfSparkles = 50; // Number of sparkles to generate
+
+  for (let i = 0; i < numberOfSparkles; i++) {
+    let sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkleContainer.appendChild(sparkle);
+
+    // Randomize sparkle position
+    sparkle.style.left = `${Math.random() * 100}vw`; // Random horizontal position (in viewport width)
+    sparkle.style.top = `${Math.random() * 100}vh`; // Random vertical position (in viewport height)
+
+    // Randomize sparkle size
+    sparkle.style.width = `${Math.random() * 4 + 1}px`; // Size between 2px and 7px
+    sparkle.style.height = `${Math.random() * 4 + 1}px`; // Size between 2px and 7px
+
+    // Randomize sparkle animation delay and duration
+    sparkle.style.animationDelay = `${Math.random() * 2}s`;
+    sparkle.style.animationDuration = `${Math.random() * 2 + 2}s`;
+  }
+</script>
+</body>
+</html>
