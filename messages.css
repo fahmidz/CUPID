@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    color: #fff;
+    padding: 20px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    background: #ff6a6a; /* Light pink */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #ff4081; /* Darker pink on hover */
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Light background */
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Messages List */
+ul.messages-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.messages-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul.messages-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+ul.messages-list li strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+ul.messages-list li p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+ul.messages-list li small {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Reply Link as Button */
+ul.messages-list li a {
+    display: inline-block;
+    padding: 12px 25px; /* Increased padding for a more button-like feel */
+    background: linear-gradient(45deg, #ff6a6a, #ff4081); /* Gradient background */
+    color: white;
+    text-decoration: none;  /* Removes underline */
+    font-weight: bold;
+    border-radius: 8px;  /* Slightly more rounded corners */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 10px;  /* Adds a bit of space between the message and the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}
+
+/* Hover effect for the button */
+ul.messages-list li a:hover {
+    transform: translateY(-2px);  /* Slight raise effect */
+    background: linear-gradient(45deg, #ff4081, #ff6a6a);  /* Invert gradient on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Slightly stronger shadow */
+}
+
+/* Focus effect for accessibility */
+ul.messages-list li a:focus {
+    outline: 3px solid #ff69b4;  /* Hot pink outline for focus state */
+    outline-offset: 2px;  /* Slightly offset the outline */
+}
+
+/* No Messages */
+.no-messages {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #612b3c;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px;
+    }
+}
