@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dating Website</title>
+<link rel="stylesheet" href="project.css">
+<!-- Include FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+<div class="container">
+  <!-- Header Section -->
+  <div class="header">
+    <div class="logo">
+      <img src="uploads/profile_pictures/Cupid.webp" alt="Cupid Logo">
+    </div>
+    <ul class="nav-menu">
+      <li>
+        <button class="signup" onclick="showSignupForm()">Signup</button>
+      </li>
+      <li>
+        <a href="login.php">
+          <button class="login">Login</button>
+        </a>
+      </li>
+    </ul>
+    <i class="fa fa-bars"></i> <!-- Menu icon for mobile view -->
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>CUPID</h1>
+    <p>a whole new dating experience!</p>
+    <a href="#get-started" class="get-started-btn">Get Started</a>
+  </div>
+</div>
+
+<!-- Sparkle Container -->
+<div class="sparkle-container" id="sparkle-container"></div>
+
+<div class="signup-container" style="display: none;">
+  <div id="profile-setup">
+    <h2>WELCOME TO CUPID</h2>
+    <form action="signup.php" method="post" id="signup" novalidate>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password">
+      </div>
+      <div class="form-group">
+        <label for="password_confirmation">Confirm Password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password">
+      </div>
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+</div>
+
+<style>
+/* Signup Container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    color: #fff;
+}
+
+/* Profile Setup Section */
+#profile-setup {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading */
+#profile-setup h2 {
+    font-size: 1.8rem;
+    color: #ff4081;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Labels */
+label {
+    font-size: 1rem;
+    color: #ff6a6a;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff4081;
+    box-shadow: 0 0 4px rgba(255, 64, 129, 0.5);
+    outline: none;
+}
+
+/* Button */
+button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #ff6a6a;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background: #ff4081;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #profile-setup {
+        padding: 1.5rem;
+    }
+
+    #profile-setup h2 {
+        font-size: 1.5rem;
+    }
+}
+</style>
+<!-- JavaScript for menu icon click and Get Started button -->
+<script>
+let bars = document.querySelector(".fa-bars");
+let menu = document.querySelector(".nav-menu");
+
+function showSignupForm() {
+  document.querySelector(".hero-section").style.display = "none"; 
+  document.querySelector(".signup-container").style.display = "flex"; 
+}
+
+bars.addEventListener("click", function() {
+  menu.classList.toggle("show");
+});
+
+document.querySelector(".get-started-btn").addEventListener("click", function(event) {
+  event.preventDefault();
+  console.log("Get Started button clicked");
+  document.querySelector(".hero-section").style.display = "none";
+  document.querySelector(".signup-container").style.display = "flex";
+});
+
+const sparkleContainer = document.getElementById('sparkle-container');
+const numberOfSparkles = 50;
+
+for (let i = 0; i < numberOfSparkles; i++) {
+  let sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+  sparkleContainer.appendChild(sparkle);
+  sparkle.style.left = `${Math.random() * 100}vw`;
+  sparkle.style.top = `${Math.random() * 100}vh`;
+  sparkle.style.width = `${Math.random() * 4 + 1}px`;
+  sparkle.style.height = `${Math.random() * 4 + 1}px`;
+  sparkle.style.animationDelay = `${Math.random() * 2}s`;
+  sparkle.style.animationDuration = `${Math.random() * 2 + 2}s`;
+}
+</script>
+</body>
+</html>
